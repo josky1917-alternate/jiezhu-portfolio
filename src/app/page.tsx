@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "./context/LanguageContext";
 import { MapPin, Mail, Briefcase, GraduationCap, Award, BookOpen, Code, Cpu, Brain, Zap } from "lucide-react";
 
 export default function HomePage() {
