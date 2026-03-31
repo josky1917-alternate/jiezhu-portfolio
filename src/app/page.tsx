@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "./context/LanguageContext";
-import { MapPin, Mail, Briefcase, GraduationCap, Award, BookOpen, Code, Cpu, Brain, Zap } from "lucide-react";
+import { MapPin, Mail, Briefcase, GraduationCap, Award, BookOpen, Code, Cpu, Brain, Zap, Download } from "lucide-react";
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -19,31 +19,31 @@ export default function HomePage() {
       title: "Plan and Budget: Effective and Efficient Test-Time Scaling on Large Language Model Reasoning",
       authors: "J Lin, X Zeng, J Zhu, S Wang, J Shun, J Wu, D Zhou",
       venue: "ICLR 2026",
-      link: "#",
-    },
-    {
-      title: "HALLUGUARD: Demystifying Data-driven and Model-driven Hallucination in Large Vision-Language Models",
-      authors: "J Zhu et al.",
-      venue: "CVPR 2026",
-      link: "#",
+      link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Nu5RCmcAAAAJ&citation_for_view=Nu5RCmcAAAAJ:UeHWp8X0CEIC",
     },
     {
       title: "Gradient Boosting Decision Tree with LSTM for Investment Prediction",
       authors: "C Yu, F Liu, J Zhu, S Guo, Y Gao, Z Yang, M Liu, Q Xing",
       venue: "Asia-Pacific Conference on Communications Technology and Computer Engineering, 2025",
-      link: "#",
+      link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Nu5RCmcAAAAJ&citation_for_view=Nu5RCmcAAAAJ:IjCSPb-OGe4C",
+    },
+    {
+      title: "Resistive Switching Characteristics of Resistive Random Access Memory Based on a BaxSr1-xTiO3 Thin Film Grown by a Hydrothermal Method",
+      authors: "J Zhu, J He, J Lu, C Ma, X Tao, W Liu, Z Feng, L Chang, Y Li, Z Hu",
+      venue: "IEEE Electron Device Letters 40 (9), 1411-1414, 2019",
+      link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Nu5RCmcAAAAJ&citation_for_view=Nu5RCmcAAAAJ:9yKSN-GCB0IC",
     },
     {
       title: "Negative Differential Resistance and Multilevel Resistive Switching in BaSrTiO3 Films",
       authors: "J He, J Zhu, C Ma, J Lu, Z Hu",
       venue: "Applied Physics Letters 115 (7), 2019",
-      link: "#",
+      link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Nu5RCmcAAAAJ&citation_for_view=Nu5RCmcAAAAJ:d1gkVwhDpl0C",
     },
     {
-      title: "Resistive Switching Characteristics of Resistive Random Access Memory Based on a BaxSr1-xTiO3 Thin Film",
-      authors: "J Zhu, J He, J Lu, C Ma, X Tao, W Liu, Z Feng, L Chang, Y Li, Z Hu",
-      venue: "IEEE Electron Device Letters 40 (9), 1411-1414, 2019",
-      link: "#",
+      title: "Modeling of the Temperature Profiles and Thermoelectric Effects in Phase Change Memory Cells",
+      authors: "C Ma, J He, J Lu, J Zhu, Z Hu",
+      venue: "Applied Sciences 8 (8), 1238, 2018",
+      link: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Nu5RCmcAAAAJ&citation_for_view=Nu5RCmcAAAAJ:2osOgNQ5qMEC",
     },
   ];
 
@@ -66,12 +66,23 @@ export default function HomePage() {
         <div className="flex justify-center gap-4 text-sm text-slate-500 dark:text-slate-500">
           <span className="flex items-center gap-1">
             <MapPin size={16} />
-            {t("United States", "美国")}
+            {t("Boston, MA, United States", "美国马萨诸塞州波士顿")}
           </span>
           <span className="flex items-center gap-1">
             <Mail size={16} />
-            jie.zhu@example.com
+            jiezhu1917@gmail.com
           </span>
+        </div>
+        
+        {/* CV Download Button */}
+        <div className="mt-6">
+          <a
+            href="https://github.com/josky1917-alternate/jiezhu-portfolio/raw/master/CV_JieZhu2026.pdf"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full btn-gradient text-white font-medium"
+          >
+            <Download size={20} />
+            {t("Download CV", "下载简历")}
+          </a>
         </div>
       </section>
 
@@ -86,8 +97,8 @@ export default function HomePage() {
           </h2>
           <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
             {t(
-              "I am a Software Engineer and Machine Learning Engineer at Amazon. I am passionate about advancing AI technologies and building scalable systems. My research focuses on improving the efficiency and effectiveness of large language models, with particular emphasis on inference optimization and test-time scaling strategies.",
-              "我是亚马逊的软件工程师和机器学习工程师。我热衷于推进人工智能技术和构建可扩展系统。我的研究专注于提高大语言模型的效率和效果，特别关注推理优化和测试时扩展策略。"
+              "I am a Software Development Engineer (ML) at Amazon, passionate about advancing AI technologies and building scalable systems. My research focuses on improving the efficiency and effectiveness of large language models, with particular emphasis on inference optimization and test-time scaling strategies. I have extensive experience in developing enterprise-scale systems, from HCM platforms handling millions of users to voice AI infrastructure powering Alexa experiences.",
+              "我是亚马逊的软件工程师（机器学习方向），热衷于推进人工智能技术和构建可扩展系统。我的研究专注于提高大语言模型的效率和效果，特别关注推理优化和测试时扩展策略。我在开发企业级系统方面拥有丰富经验，从处理数百万用户的HCM平台到支持Alexa体验的语音AI基础设施。"
             )}
           </p>
         </div>
@@ -127,22 +138,91 @@ export default function HomePage() {
           {t("Work Experience", "工作经历")}
         </h2>
         <div className="space-y-6">
+          {/* Amazon SDE (ML) */}
           <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  {t("Software Engineer & Machine Learning Engineer", "软件工程师 & 机器学习工程师")}
+                  Software Development Engineer (ML)
                 </h3>
-                <p className="text-blue-600 dark:text-blue-400 font-medium">Amazon</p>
+                <p className="text-blue-600 dark:text-blue-400 font-medium">Amazon AGI Customization Service</p>
               </div>
               <span className="text-sm text-slate-500 dark:text-slate-500 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700">
-                {t("Present", "至今")}
+                Aug 2025 - Present
               </span>
             </div>
-            <ul className="list-disc list-inside text-slate-700 dark:text-slate-300 space-y-1">
-              <li>{t("Design and development of key features for Amazon SageMaker Inference", "Amazon SageMaker 推理的关键功能设计与开发")}</li>
-              <li>{t("Reinforcement fine-tuning for Amazon Nova models", "Amazon Nova 模型的强化微调")}</li>
-              <li>{t("Large language model optimization and deployment", "大语言模型优化与部署")}</li>
+            <ul className="list-disc list-inside text-slate-700 dark:text-slate-300 space-y-1 text-sm">
+              <li>{t("Develop cutting-edge Large Language Models (LLMs) and Generative AI solutions", "开发前沿的大语言模型（LLM）和生成式AI解决方案")}</li>
+              <li>{t("Responsible for Nova LLM training techniques and optimization", "负责Nova LLM训练技术和优化")}</li>
+              <li>{t("Implement model customization capabilities through fine-tuning and distillation", "通过微调和蒸馏实现模型定制能力")}</li>
+              <li>{t("Develop multimodal LLMs leveraging heterogeneous data sources", "利用异构数据源开发多模态大语言模型")}</li>
+              <li>{t("Build efficient deployment platforms for large language models", "构建大语言模型的高效部署平台")}</li>
+            </ul>
+          </div>
+
+          {/* Amazon SDE II */}
+          <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  Software Development Engineer II
+                </h3>
+                <p className="text-blue-600 dark:text-blue-400 font-medium">Amazon People Experience Technology</p>
+              </div>
+              <span className="text-sm text-slate-500 dark:text-slate-500 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700">
+                Dec 2023 - Aug 2025
+              </span>
+            </div>
+            <ul className="list-disc list-inside text-slate-700 dark:text-slate-300 space-y-1 text-sm">
+              <li>{t("Developed new features for the world's largest HCM system handling million-scale hiring", "开发全球最大的HCM系统新功能，处理百万级招聘量")}</li>
+              <li>{t("Designed new hiring model for M&A, reducing acquisition process from weeks to hours", "设计自动并购招聘模型，将收购流程从数周缩短至数小时")}</li>
+              <li>{t("Optimized hiring document process, reducing paperwork by 80%", "优化招聘文档流程，减少80%文书工作")}</li>
+              <li>{t("Improved contingent worker onboarding, reducing start-date delay rate by 20%", "改善临时工入职体验，降低20%开始日期延迟率")}</li>
+              <li>{t("Designed GenAI advanced hiring automation solutions", "设计GenAI高级招聘自动化解决方案")}</li>
+              <li>{t("Created GenAI staffing search tool and AI chatbot for HR knowledge base", "创建生成式AI人员搜索工具和HR知识库聊天机器人")}</li>
+            </ul>
+          </div>
+
+          {/* Amazon SDE */}
+          <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  Software Development Engineer
+                </h3>
+                <p className="text-blue-600 dark:text-blue-400 font-medium">Alexa Audio Voice Experience Growth</p>
+              </div>
+              <span className="text-sm text-slate-500 dark:text-slate-500 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700">
+                May 2022 - Dec 2023
+              </span>
+            </div>
+            <ul className="list-disc list-inside text-slate-700 dark:text-slate-300 space-y-1 text-sm">
+              <li>{t("Developed features on Alexa Audio Voice infrastructure (Java Spring, AWS)", "在Alexa语音基础设施开发新功能（Java Spring、AWS）")}</li>
+              <li>{t("Alexa Audio Onboarding Experience: 30% increase in monthly user completion rate", "Alexa音频开箱体验：月用户完成率提升30%")}</li>
+              <li>{t("Alexa Audio Content Injection: Integrated with Amazon Music, Spotify, Apple", "Alexa音频内容注入：实现与多个音乐提供商集成")}</li>
+              <li>{t("Designed burst traffic solution for Alexa Routines, reducing peak load by 30% and latency by 50%", "设计Alexa例程突发流量解决方案，高峰负载降低30%，延迟降低50%")}</li>
+              <li>{t("Participated in LLM integration with Alexa Music Voice Experience", "参与LLM与Alexa音乐语音体验的集成")}</li>
+            </ul>
+          </div>
+
+          {/* Citrix */}
+          <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  Software Development Engineer
+                </h3>
+                <p className="text-blue-600 dark:text-blue-400 font-medium">Citrix Systems - Application Layering and Cloud Service</p>
+              </div>
+              <span className="text-sm text-slate-500 dark:text-slate-500 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700">
+                Jan 2021 - May 2022
+              </span>
+            </div>
+            <ul className="list-disc list-inside text-slate-700 dark:text-slate-300 space-y-1 text-sm">
+              <li>{t("Developed Citrix Image Portability Service for migrating server images to cloud platforms (Azure, GCP, AWS)", "开发Citrix镜像可移植服务，支持迁移到云平台")}</li>
+              <li>{t("Built backend services with C# .Net Core, Python, PowerShell, deployed to Kubernetes", "使用C# .Net Core、Python、PowerShell开发后端服务，部署到Kubernetes")}</li>
+              <li>{t("Improved Jenkins pipeline parallelism, reducing deployment time by 50%+", "改进Jenkins流水线并行结构，部署时间降低50%以上")}</li>
+              <li>{t("Enhanced Terraform solution for multi-region infrastructure automation", "增强Terraform解决方案，实现多地域基础设施自动化")}</li>
             </ul>
           </div>
         </div>
@@ -161,11 +241,36 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  {t("Ph.D. / Master's in Computer Engineering", "计算机工程 博士/硕士")}
+                  M.Eng. in Computer Engineering (Machine Learning)
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400">Virginia Tech</p>
+                <p className="text-slate-600 dark:text-slate-400">Virginia Polytechnic Institute and State University</p>
+                <p className="text-sm text-slate-500">GPA: 3.77/4.0 | Sep 2019 - Dec 2020</p>
               </div>
               <span className="text-sm text-slate-500 dark:text-slate-500">IEEE-Eta Kappa Nu (HKN) Member</span>
+            </div>
+          </div>
+
+          <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  M.S. in Microelectronics and Solid-State Electronics
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400">Huazhong University of Science and Technology</p>
+                <p className="text-sm text-slate-500">GPA: 4.0/4.0 | Sep 2016 - Jun 2019</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                  B.S. in Applied Physics
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400">University of Science and Technology of China</p>
+                <p className="text-sm text-slate-500">Sep 2012 - Jun 2016</p>
+              </div>
             </div>
           </div>
         </div>
@@ -183,11 +288,14 @@ export default function HomePage() {
         </h2>
         <div className="space-y-4">
           {publications.map((pub, index) => (
-            <div
+            <a
               key={index}
-              className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700"
+              href={pub.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 transition-colors"
             >
-              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+              <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2 hover:text-blue-600 dark:hover:text-blue-400">
                 {pub.title}
               </h3>
               <p className="text-slate-600 dark:text-slate-400 text-sm mb-2">{pub.authors}</p>
@@ -195,8 +303,9 @@ export default function HomePage() {
                 <span className="tag px-3 py-1 rounded-full text-xs font-medium text-blue-700 dark:text-blue-300">
                   {pub.venue}
                 </span>
+                <span className="text-xs text-slate-400">{t("Click to view on Google Scholar", "点击查看Google Scholar")}</span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
         <div className="mt-6 text-center">
@@ -223,11 +332,11 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="card-hover p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
             <h3 className="font-semibold text-slate-900 dark:text-white">Student Spotlight</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-sm">Sanghani Center for AI & Data Analytics</p>
+            <p className="text-slate-600 dark:text-slate-400 text-sm">VirginiaTech Northern Virginia Center, Falls Church, VA</p>
           </div>
           <div className="card-hover p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
             <h3 className="font-semibold text-slate-900 dark:text-white">IEEE-Eta Kappa Nu (HKN)</h3>
-            <p className="text-slate-600 dark:text-slate-400 text-sm">Honor Society Member</p>
+            <p className="text-slate-600 dark:text-slate-400 text-sm">Honor Society Member, Beta Lambda Chapter</p>
           </div>
         </div>
       </section>
