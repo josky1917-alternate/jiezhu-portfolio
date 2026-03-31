@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { useLanguage } from "./context/LanguageContext";
-import { MapPin, Mail, Briefcase, GraduationCap, Award, BookOpen, Code, Cpu, Brain, Zap, Download } from "lucide-react";
+import { MapPin, Mail, Briefcase, GraduationCap, Award, BookOpen, Code, Cpu, Brain, Zap, Download, ChevronDown, ChevronUp } from "lucide-react";
 
 export default function HomePage() {
   const { t } = useLanguage();
+  const [showMoreExp, setShowMoreExp] = useState(false);
+  const [showMoreEdu, setShowMoreEdu] = useState(false);
 
   const researchAreas = [
     { icon: Brain, label: t("Artificial Intelligence", "人工智能"), color: "from-pink-500 to-rose-500" },
@@ -149,7 +152,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  Software Development Engineer (ML)
+                  {t("Software Development Engineer (ML)", "软件开发工程师（机器学习方向）")}
                 </h3>
                 <p className="text-blue-600 dark:text-blue-400 font-medium">Amazon AGI Customization Service</p>
               </div>
@@ -171,7 +174,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  Software Development Engineer II
+                  {t("Software Development Engineer II", "高级软件开发工程师")}
                 </h3>
                 <p className="text-blue-600 dark:text-blue-400 font-medium">Amazon People Experience Technology</p>
               </div>
@@ -189,48 +192,71 @@ export default function HomePage() {
             </ul>
           </div>
 
-          {/* Amazon SDE */}
-          <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  Software Development Engineer
-                </h3>
-                <p className="text-blue-600 dark:text-blue-400 font-medium">Alexa Audio Voice Experience Growth</p>
+          {/* Collapsed Experiences */}
+          {showMoreExp && (
+            <>
+              {/* Amazon SDE */}
+              <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                      {t("Software Development Engineer", "软件开发工程师")}
+                    </h3>
+                    <p className="text-blue-600 dark:text-blue-400 font-medium">Alexa Audio Voice Experience Growth</p>
+                  </div>
+                  <span className="text-sm text-slate-500 dark:text-slate-500 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700">
+                    May 2022 - Dec 2023
+                  </span>
+                </div>
+                <ul className="list-disc list-inside text-slate-700 dark:text-slate-300 space-y-1 text-sm">
+                  <li>{t("Developed features on Alexa Audio Voice infrastructure (Java Spring, AWS)", "在Alexa语音基础设施开发新功能（Java Spring、AWS）")}</li>
+                  <li>{t("Alexa Audio Onboarding Experience: 30% increase in monthly user completion rate", "Alexa音频开箱体验：月用户完成率提升30%")}</li>
+                  <li>{t("Alexa Audio Content Injection: Integrated with Amazon Music, Spotify, Apple", "Alexa音频内容注入：实现与多个音乐提供商集成")}</li>
+                  <li>{t("Designed burst traffic solution for Alexa Routines, reducing peak load by 30% and latency by 50%", "设计Alexa例程突发流量解决方案，高峰负载降低30%，延迟降低50%")}</li>
+                  <li>{t("Participated in LLM integration with Alexa Music Voice Experience", "参与LLM与Alexa音乐语音体验的集成")}</li>
+                </ul>
               </div>
-              <span className="text-sm text-slate-500 dark:text-slate-500 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700">
-                May 2022 - Dec 2023
-              </span>
-            </div>
-            <ul className="list-disc list-inside text-slate-700 dark:text-slate-300 space-y-1 text-sm">
-              <li>{t("Developed features on Alexa Audio Voice infrastructure (Java Spring, AWS)", "在Alexa语音基础设施开发新功能（Java Spring、AWS）")}</li>
-              <li>{t("Alexa Audio Onboarding Experience: 30% increase in monthly user completion rate", "Alexa音频开箱体验：月用户完成率提升30%")}</li>
-              <li>{t("Alexa Audio Content Injection: Integrated with Amazon Music, Spotify, Apple", "Alexa音频内容注入：实现与多个音乐提供商集成")}</li>
-              <li>{t("Designed burst traffic solution for Alexa Routines, reducing peak load by 30% and latency by 50%", "设计Alexa例程突发流量解决方案，高峰负载降低30%，延迟降低50%")}</li>
-              <li>{t("Participated in LLM integration with Alexa Music Voice Experience", "参与LLM与Alexa音乐语音体验的集成")}</li>
-            </ul>
-          </div>
 
-          {/* Citrix */}
-          <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  Software Development Engineer
-                </h3>
-                <p className="text-blue-600 dark:text-blue-400 font-medium">Citrix Systems - Application Layering and Cloud Service</p>
+              {/* Citrix */}
+              <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                      {t("Software Development Engineer", "软件开发工程师")}
+                    </h3>
+                    <p className="text-blue-600 dark:text-blue-400 font-medium">Citrix Systems - Application Layering and Cloud Service</p>
+                  </div>
+                  <span className="text-sm text-slate-500 dark:text-slate-500 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700">
+                    Jan 2021 - May 2022
+                  </span>
+                </div>
+                <ul className="list-disc list-inside text-slate-700 dark:text-slate-300 space-y-1 text-sm">
+                  <li>{t("Developed Citrix Image Portability Service for migrating server images to cloud platforms (Azure, GCP, AWS)", "开发Citrix镜像可移植服务，支持迁移到云平台")}</li>
+                  <li>{t("Built backend services with C# .Net Core, Python, PowerShell, deployed to Kubernetes", "使用C# .Net Core、Python、PowerShell开发后端服务，部署到Kubernetes")}</li>
+                  <li>{t("Improved Jenkins pipeline parallelism, reducing deployment time by 50%+", "改进Jenkins流水线并行结构，部署时间降低50%以上")}</li>
+                  <li>{t("Enhanced Terraform solution for multi-region infrastructure automation", "增强Terraform解决方案，实现多地域基础设施自动化")}</li>
+                </ul>
               </div>
-              <span className="text-sm text-slate-500 dark:text-slate-500 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-700">
-                Jan 2021 - May 2022
-              </span>
-            </div>
-            <ul className="list-disc list-inside text-slate-700 dark:text-slate-300 space-y-1 text-sm">
-              <li>{t("Developed Citrix Image Portability Service for migrating server images to cloud platforms (Azure, GCP, AWS)", "开发Citrix镜像可移植服务，支持迁移到云平台")}</li>
-              <li>{t("Built backend services with C# .Net Core, Python, PowerShell, deployed to Kubernetes", "使用C# .Net Core、Python、PowerShell开发后端服务，部署到Kubernetes")}</li>
-              <li>{t("Improved Jenkins pipeline parallelism, reducing deployment time by 50%+", "改进Jenkins流水线并行结构，部署时间降低50%以上")}</li>
-              <li>{t("Enhanced Terraform solution for multi-region infrastructure automation", "增强Terraform解决方案，实现多地域基础设施自动化")}</li>
-            </ul>
-          </div>
+            </>
+          )}
+
+          {/* Show More/Less Button */}
+          <button
+            onClick={() => setShowMoreExp(!showMoreExp)}
+            className="w-full py-3 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
+          >
+            {showMoreExp ? (
+              <>
+                <ChevronUp size={20} />
+                {t("Show Less", "收起")}
+              </>
+            ) : (
+              <>
+                <ChevronDown size={20} />
+                {t("Show More Experience", "显示更多经历")}
+              </>
+            )}
+          </button>
         </div>
       </section>
 
@@ -243,42 +269,72 @@ export default function HomePage() {
           {t("Education", "教育背景")}
         </h2>
         <div className="space-y-4">
+          {/* Most Recent Education */}
           <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  M.Eng. in Computer Engineering (Machine Learning)
+                  {t("M.Eng. in Computer Engineering (Machine Learning)", "计算机工程硕士（机器学习方向）")}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400">Virginia Polytechnic Institute and State University</p>
-                <p className="text-sm text-slate-500">GPA: 3.77/4.0 | Sep 2019 - Dec 2020</p>
+                <p className="text-slate-600 dark:text-slate-400">
+                  {t("Virginia Polytechnic Institute and State University", "弗吉尼亚理工大学")}
+                </p>
+                <p className="text-sm text-slate-500">Sep 2019 - Dec 2020</p>
               </div>
               <span className="text-sm text-slate-500 dark:text-slate-500">IEEE-Eta Kappa Nu (HKN) Member</span>
             </div>
           </div>
 
-          <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  M.S. in Microelectronics and Solid-State Electronics
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400">Huazhong University of Science and Technology</p>
-                <p className="text-sm text-slate-500">GPA: 4.0/4.0 | Sep 2016 - Jun 2019</p>
+          {/* Collapsed Educations */}
+          {showMoreEdu && (
+            <>
+              <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                      {t("M.S. in Microelectronics and Solid-State Electronics", "微电子与固体电子学硕士")}
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-400">
+                      {t("Huazhong University of Science and Technology", "华中科技大学")}
+                    </p>
+                    <p className="text-sm text-slate-500">Sep 2016 - Jun 2019</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  B.S. in Applied Physics
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400">University of Science and Technology of China</p>
-                <p className="text-sm text-slate-500">Sep 2012 - Jun 2016</p>
+              <div className="card-hover p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                      {t("B.S. in Applied Physics", "应用物理学学士")}
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-400">
+                      {t("University of Science and Technology of China", "中国科学技术大学")}
+                    </p>
+                    <p className="text-sm text-slate-500">Sep 2012 - Jun 2016</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            </>
+          )}
+
+          {/* Show More/Less Button */}
+          <button
+            onClick={() => setShowMoreEdu(!showMoreEdu)}
+            className="w-full py-3 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
+          >
+            {showMoreEdu ? (
+              <>
+                <ChevronUp size={20} />
+                {t("Show Less", "收起")}
+              </>
+            ) : (
+              <>
+                <ChevronDown size={20} />
+                {t("Show More Education", "显示更多教育经历")}
+              </>
+            )}
+          </button>
         </div>
       </section>
 
