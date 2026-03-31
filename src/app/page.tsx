@@ -52,9 +52,11 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="text-center py-16">
         <div className="inline-block p-1 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-6">
-          <div className="w-32 h-32 rounded-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-4xl font-bold text-slate-500">
-            JZ
-          </div>
+          <img
+            src="/photo.jpg"
+            alt="Jie Zhu"
+            className="w-32 h-32 rounded-full object-cover"
+          />
         </div>
         <h1 className="text-5xl font-bold mb-4 gradient-text">Jie Zhu</h1>
         <p className="text-xl text-slate-600 dark:text-slate-400 mb-2">
