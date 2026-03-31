@@ -34,7 +34,7 @@ export default function Header() {
         <div className="flex items-center gap-6">
           {/* Blog Link */}
           <a
-            href="https://my-blog-gamma-opal.vercel.app"
+            href="https://blog.jiezstudio.com"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:flex items-center gap-2 text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors"

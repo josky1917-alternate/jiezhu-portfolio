@@ -414,7 +414,7 @@ export default function HomePage() {
             )}
           </p>
           <a
-            href="https://my-blog-gamma-opal.vercel.app"
+            href="https://blog.jiezstudio.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full btn-gradient text-white font-semibold text-lg"
