@@ -152,7 +152,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  {t("Software Development Engineer (ML)", "软件开发工程师（机器学习方向）")}
+                  {t("Software Development Engineer (ML)", "高级软件开发&机器学习工程师")}
                 </h3>
                 <p className="text-blue-600 dark:text-blue-400 font-medium">Amazon AGI Customization Service</p>
               </div>
