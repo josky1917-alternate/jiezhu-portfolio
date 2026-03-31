@@ -63,21 +63,25 @@ export default function HomePage() {
         <p className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-6">
           @ Amazon
         </p>
-        <div className="flex justify-center gap-4 text-sm text-slate-500 dark:text-slate-500">
+        <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500 dark:text-slate-500">
           <span className="flex items-center gap-1">
             <MapPin size={16} />
             {t("Boston, MA, United States", "美国马萨诸塞州波士顿")}
           </span>
-          <span className="flex items-center gap-1">
+          <a href="mailto:jiezwork@gmail.com" className="flex items-center gap-1 hover:text-blue-600 transition-colors">
             <Mail size={16} />
-            jiezhu1917@gmail.com
-          </span>
+            jiezwork@gmail.com
+          </a>
+          <a href="mailto:jiez19@vt.edu" className="flex items-center gap-1 hover:text-blue-600 transition-colors">
+            <Mail size={16} />
+            jiez19@vt.edu
+          </a>
         </div>
         
         {/* CV Download Button */}
         <div className="mt-6">
           <a
-            href="https://github.com/josky1917-alternate/jiezhu-portfolio/raw/master/CV_JieZhu2026.pdf"
+            href="/CV_JieZhu2026.pdf"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full btn-gradient text-white font-medium"
           >
             <Download size={20} />
