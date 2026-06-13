@@ -63,7 +63,7 @@ export default function HomePage() {
         </div>
         <h1 className="text-5xl font-bold mb-4 gradient-text">Jie Zhu</h1>
         <p className="text-xl text-slate-600 dark:text-slate-400 mb-2">
-          {t("Software Engineer & Machine Learning Engineer", "软件工程师 & 机器学习工程师")}
+          {t("Machine Learning Engineer II", "机器学习工程师 II")}
         </p>
         <p className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-6">
           @ Amazon
@@ -86,7 +86,7 @@ export default function HomePage() {
         {/* CV Download Button */}
         <div className="mt-6">
           <a
-            href="/CV_JieZhu2026.pdf"
+            href="/CV_JieZhu_2026.pdf"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full btn-gradient text-white font-medium"
           >
             <Download size={20} />
@@ -106,8 +106,8 @@ export default function HomePage() {
           </h2>
           <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
             {t(
-              "I am a Software Development Engineer (ML) at Amazon, passionate about advancing AI technologies and building scalable systems. My research focuses on improving the efficiency and effectiveness of large language models, with particular emphasis on inference optimization and test-time scaling strategies. I have extensive experience in developing enterprise-scale systems, from HCM platforms handling millions of users to voice AI infrastructure powering Alexa experiences.",
-              "我是亚马逊的软件工程师（机器学习方向），热衷于推进人工智能技术和构建可扩展系统。我的研究专注于提高大语言模型的效率和效果，特别关注推理优化和测试时扩展策略。我在开发企业级系统方面拥有丰富经验，从处理数百万用户的HCM平台到支持Alexa体验的语音AI基础设施。"
+              "I am a Machine Learning Engineer II at Amazon AGI Customization Service, passionate about advancing AI technologies and building scalable systems. My research focuses on improving the efficiency and effectiveness of large language models, with particular emphasis on training techniques, fine-tuning, distillation, and inference optimization. I have extensive experience in developing enterprise-scale systems, from HCM platforms handling millions of users to voice AI infrastructure powering Alexa experiences.",
+              "我是亚马逊AGI定制服务的机器学习工程师II，热衷于推进人工智能技术和构建可扩展系统。我的研究专注于提高大语言模型的效率和效果，特别关注训练技术、微调、蒸馏和推理优化。我在开发企业级系统方面拥有丰富经验，从处理数百万用户的HCM平台到支持Alexa体验的语音AI基础设施。"
             )}
           </p>
         </div>
@@ -152,7 +152,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-3">
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                  {t("Software Development Engineer (ML)", "高级软件开发&机器学习工程师")}
+                  {t("Machine Learning Engineer II", "机器学习工程师 II")}
                 </h3>
                 <p className="text-blue-600 dark:text-blue-400 font-medium">Amazon AGI Customization Service</p>
               </div>
@@ -161,11 +161,11 @@ export default function HomePage() {
               </span>
             </div>
             <ul className="list-disc list-inside text-slate-700 dark:text-slate-300 space-y-1 text-sm">
-              <li>{t("Develop cutting-edge Large Language Models (LLMs) and Generative AI solutions", "开发前沿的大语言模型（LLM）和生成式AI解决方案")}</li>
-              <li>{t("Responsible for Nova LLM training techniques and optimization", "负责Nova LLM训练技术和优化")}</li>
-              <li>{t("Implement model customization capabilities through fine-tuning and distillation", "通过微调和蒸馏实现模型定制能力")}</li>
-              <li>{t("Develop multimodal LLMs leveraging heterogeneous data sources", "利用异构数据源开发多模态大语言模型")}</li>
-              <li>{t("Build efficient deployment platforms for large language models", "构建大语言模型的高效部署平台")}</li>
+              <li>{t("Research cutting-edge LLMs and develop Generative AI customization solutions", "研究前沿大语言模型并开发生成式AI定制解决方案")}</li>
+              <li>{t("Nova LLM Training techniques and optimizations", "Nova LLM训练技术和优化")}</li>
+              <li>{t("Fine-tuning and distillation capabilities", "微调和蒸馏能力")}</li>
+              <li>{t("Multimodal LLMs leveraging heterogeneous data sources", "利用异构数据源的多模态大语言模型")}</li>
+              <li>{t("Developing high-efficiency deployment platforms for LLMs", "开发大语言模型的高效部署平台")}</li>
             </ul>
           </div>
 
@@ -187,8 +187,8 @@ export default function HomePage() {
               <li>{t("Designed new hiring model for M&A, reducing acquisition process from weeks to hours", "设计自动并购招聘模型，将收购流程从数周缩短至数小时")}</li>
               <li>{t("Optimized hiring document process, reducing paperwork by 80%", "优化招聘文档流程，减少80%文书工作")}</li>
               <li>{t("Improved contingent worker onboarding, reducing start-date delay rate by 20%", "改善临时工入职体验，降低20%开始日期延迟率")}</li>
-              <li>{t("Designed GenAI advanced hiring automation solutions", "设计GenAI高级招聘自动化解决方案")}</li>
-              <li>{t("Created GenAI staffing search tool and AI chatbot for HR knowledge base", "创建生成式AI人员搜索工具和HR知识库聊天机器人")}</li>
+              <li>{t("Developed GenAI solutions: AI self-correction for error resolution, people search tool, and HR chatbot", "开发GenAI解决方案：错误自纠正、人员搜索工具和HR聊天机器人")}</li>
+              <li>{t("Reduced consultation time from days to hours", "将咨询时间从数天缩短至数小时")}</li>
             </ul>
           </div>
 
